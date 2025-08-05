@@ -14,10 +14,6 @@ import os
 
 
 
-# 添加本地的 nltk_data 路径
-nltk_path = os.path.join(os.path.dirname(__file__), 'nltk_data')
-nltk.data.path.append(nltk_path)
-
 #Load Clip model
 clip_model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32")
 clip_processor = CLIPProcessor.from_pretrained("openai/clip-vit-base-patch32")
