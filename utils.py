@@ -31,9 +31,7 @@ from io import BytesIO
 import nltk
 import os
 
-# 添加本地的 nltk_data 路径
-nltk_path = os.path.join(os.path.dirname(__file__), 'nltk_data')
-nltk.data.path.append(nltk_path)
+
 def get_response(prompt, memory, api_key):
     # Create the LLM model
     llm = ChatOpenAI(
