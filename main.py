@@ -9,9 +9,17 @@ import re
 from transformers import CLIPModel, CLIPProcessor
 from PIL import Image
 import torch
+import nltk
+import os
+
 
 import nltk
 nltk.download('punkt')
+
+
+# 添加本地的 nltk_data 路径
+nltk_path = os.path.join(os.path.dirname(__file__), 'nltk_data')
+nltk.data.path.append(nltk_path)
 
 #Load Clip model
 clip_model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32")
