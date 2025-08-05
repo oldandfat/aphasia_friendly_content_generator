@@ -13,9 +13,6 @@ import nltk
 import os
 
 
-import nltk
-nltk.download('punkt')
-
 
 # 添加本地的 nltk_data 路径
 nltk_path = os.path.join(os.path.dirname(__file__), 'nltk_data')
