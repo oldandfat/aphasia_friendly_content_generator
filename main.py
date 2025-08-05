@@ -10,6 +10,8 @@ from transformers import CLIPModel, CLIPProcessor
 from PIL import Image
 import torch
 
+import nltk
+nltk.download('punkt')
 
 #Load Clip model
 clip_model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32")
