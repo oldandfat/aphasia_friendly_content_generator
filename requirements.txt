@@ -1,0 +1,12 @@
+streamlit
+openai
+langchain
+langchain-openai
+keybert
+transformers
+torch
+nltk
+scikit-learn
+Pillow
+requests
+pandas
