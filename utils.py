@@ -316,11 +316,11 @@ def summary_output_for_images(text_output,api_key):
 from torch.nn.functional import cosine_similarity
 
 def compute_clip_score(image_url, text, model, processor):
-    # 加载图像
+    
     response = requests.get(image_url)
     image = Image.open(BytesIO(response.content)).convert("RGB")
 
-    # 处理图文
+    
     inputs = processor(text=[text], images=image, return_tensors="pt", padding=True)
 
     with torch.no_grad():
@@ -328,7 +328,7 @@ def compute_clip_score(image_url, text, model, processor):
         image_embeds = outputs.image_embeds  # shape: (1, 512)
         text_embeds = outputs.text_embeds    # shape: (1, 512)
 
-        # 计算 cosine similarity 并映射为 0~1
+        #  cosine similarity  0~1
         cos_sim = cosine_similarity(image_embeds, text_embeds).item()
         normalized_score = (cos_sim + 1) / 2
 
